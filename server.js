@@ -55,15 +55,20 @@ app.use('*', async (req, res) => {
     }
 
     if(url.includes('/') && url.split('/').length >2) {
-      const urli = url.split('/')
-      const index = urli[2]
-      const meta = await axios.get(`https://bafybeifhofputngb7k3zqpl5otnv4utpvse66sbzutxsg6bkozks6ytt7m.ipfs.dweb.link/${index}`);
-      const image = `https://bafybeies3odi24wyk3e22rnautr57tiuk3b56nxrd53fxgtvr37abmz5j4.ipfs.dweb.link/${index}.png`;
+      // const urli = url.split('/')
+      // const index = urli[2]
+      // const meta = await axios.get(`https://bafybeifhofputngb7k3zqpl5otnv4utpvse66sbzutxsg6bkozks6ytt7m.ipfs.dweb.link/${index}`);
+      // const image = `https://bafybeies3odi24wyk3e22rnautr57tiuk3b56nxrd53fxgtvr37abmz5j4.ipfs.dweb.link/${index}.png`;
+      
+      // template = template
+      // .replace("<title>Azuki|LooksRare</title>", `<title>${meta?.data.name} - Azuki|LooksRare</title>`)
+      // .replace("__META_OG_TITLE__", `${meta?.data.name} - Azuki|LooksRare`)
+      // .replace("__META_OG_DESCRIPTION__", `LocksRare is a Community-first Marketplace for NFT's and digital.`)
+      // .replace("__META_OG_IMAGE__", image);
+
       template = template
-      .replace("<title>Azuki|LooksRare</title>", `<title>${meta?.data.name} - Azuki|LooksRare</title>`)
-      .replace("__META_OG_TITLE__", `${meta?.data.name} - Azuki|LooksRare`)
-      .replace("__META_OG_DESCRIPTION__", `LocksRare is a Community-first Marketplace for NFT's and digital.`)
-      .replace("__META_OG_IMAGE__", image);
+      .replace("<title>Azuki|LooksRare</title>", `<title>$Test Azuki|LooksRare</title>`)
+
     }
 
     const rendered = await render(url, ssrManifest)
