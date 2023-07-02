@@ -2,8 +2,6 @@ import fs from 'node:fs/promises'
 import express from 'express'
 import axios from 'axios'
 
-
-
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
 const port = process.env.PORT || 5173
